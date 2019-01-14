@@ -42,7 +42,7 @@
 
             <EditText
                 android:id="@+id/cae_register_password"
-                android:hint="请输入密码"
+                android:hint="@string/pwd1"
                 android:inputType="textPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -55,7 +55,7 @@
 
             <EditText
                 android:id="@+id/cae_register_password2"
-                android:hint="请再次输入密码"
+                android:hint="@string/pwd2"
                 android:inputType="textPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

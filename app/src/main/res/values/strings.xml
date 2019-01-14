@@ -1,9 +1,12 @@
 <resources>
+
+    <string name="pwd1">请输入密码</string>
+    <string name="pwd2">请再次输入密码</string>
+
     <string name="app_name">基于二维码的快递信息保护系统</string>
     <string name="user_login">用户登录</string>
     <string name="admin_login">管理员登录</string>
     <string name="courier_login">快递员登录</string>
-
 
 
     <string name="sender_name_input">请输入寄件人姓名</string>
@@ -11,6 +14,16 @@
     <string name="receiver_name_input">请输入收件人姓名</string>
     <string name="receiver_tel_input">请输入收件人手机号码</string>
     <string name="receiver_add_input">请输入收货地址</string>
+
+    <string name="c_idcard_input">请输入身份证号</string>
+    <string name="c_name_input">请输入真实姓名</string>
+    <string name="c_tel_input">请输入手机号码</string>
+
+
+
+
+
+
 
     <string name="hint_address">请输入收货地址</string>
     <string name="hint_phone_num">青输入手机号</string>

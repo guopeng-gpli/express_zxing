@@ -33,14 +33,40 @@
             android:layout_alignParentStart="true">
 
             <EditText
-                android:id="@+id/et_id_num"
+                android:id="@+id/cae_c_res_idnum"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_id_num"
                 android:inputType="number" />
         </android.support.design.widget.TextInputLayout>
 
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
 
+            <EditText
+                android:id="@+id/cae_c_res_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/c_name_input" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <EditText
+                android:id="@+id/cae_c_res_tel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/c_tel_input"
+                android:inputType="phone" />
+        </android.support.design.widget.TextInputLayout>
 
 
 
@@ -50,8 +76,8 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/cae_register_password"
-                android:hint="请输入密码"
+                android:id="@+id/cae_c_res_pwd"
+                android:hint="@string/pwd1"
                 android:inputType="textPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -63,8 +89,8 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/cae_register_password2"
-                android:hint="请再次输入密码"
+                android:id="@+id/cae_c_res_pwd2"
+                android:hint="@string/pwd2"
                 android:inputType="textPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
