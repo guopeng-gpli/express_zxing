@@ -6,7 +6,12 @@
 
 
 
-    <string name="hint_user_name">请输入用户名</string>
+    <string name="sender_name_input">请输入寄件人姓名</string>
+    <string name="sender_tel_input">请输入寄件人手机号码</string>
+    <string name="receiver_name_input">请输入收件人姓名</string>
+    <string name="receiver_tel_input">请输入收件人手机号码</string>
+    <string name="receiver_add_input">请输入收货地址</string>
+
     <string name="hint_address">请输入收货地址</string>
     <string name="hint_phone_num">青输入手机号</string>
     <string name="hint_id_num">请输入身份证号</string>

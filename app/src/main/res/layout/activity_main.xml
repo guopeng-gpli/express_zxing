@@ -115,12 +115,6 @@
         android:layout_height="0dp"
         android:layout_weight="0.5"
         android:orientation="horizontal">
-       <LinearLayout
-           android:layout_width="0dp"
-           android:layout_height="match_parent"
-           android:layout_weight="1">
-
-       </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -133,8 +127,36 @@
                 >
                 <TextView
                     android:clickable="true"
-                    android:id="@+id/cae_register"
-                    android:textSize="18dp"
+                    android:id="@+id/cae_courier_register"
+                    android:textSize="15dp"
+                    android:textColor="#0088ff"
+                    android:layout_gravity="end"
+                    android:text="没有快递员账号？去注册"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                ></LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                >
+                <TextView
+                    android:clickable="true"
+                    android:id="@+id/cae_user_register"
+                    android:textSize="15dp"
                     android:textColor="#0088ff"
                     android:layout_gravity="end"
                     android:text="没有用户账号？去注册"

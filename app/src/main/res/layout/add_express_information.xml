@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary"
-        app:title="请填写用户信息"
+        app:title="请填写快件信息"
         app:titleTextColor="#ffffff">
 
     </android.support.v7.widget.Toolbar>
@@ -35,10 +35,10 @@
                 android:layout_alignParentStart="true">
 
                 <EditText
-                    android:id="@+id/et_user_name"
+                    android:id="@+id/cae_edit_sender_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/hint_user_name" />
+                    android:hint="@string/sender_name_input" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -49,23 +49,10 @@
                 android:layout_alignParentStart="true">
 
                 <EditText
-                    android:id="@+id/et_address"
+                    android:id="@+id/cae_edit_sender_tel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/hint_address" />
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true">
-
-                <EditText
-                    android:id="@+id/et_phone_num"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/hint_phone_num"
+                    android:hint="@string/sender_tel_input"
                     android:inputType="phone" />
             </android.support.design.widget.TextInputLayout>
 
@@ -76,16 +63,43 @@
                 android:layout_alignParentStart="true">
 
                 <EditText
-                    android:id="@+id/et_id_num"
+                    android:id="@+id/cae_edit_rec_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/hint_id_num"
-                    android:inputType="number" />
+                    android:hint="@string/receiver_name_input" />
+
             </android.support.design.widget.TextInputLayout>
 
 
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <EditText
+                    android:id="@+id/cae_edit_rec_tel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/receiver_tel_input"
+                    android:inputType="phone" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <EditText
+                    android:id="@+id/cae_edit_rec_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/receiver_add_input" />
+            </android.support.design.widget.TextInputLayout>
+
             <Button
-                android:id="@+id/btn_add"
+                android:id="@+id/btn_add_express"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"

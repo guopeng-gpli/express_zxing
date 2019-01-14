@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary"
-        app:title="请填写用户注册信息"
+        app:title="请填写快递员注册信息"
         app:titleTextColor="#ffffff">
 
     </android.support.v7.widget.Toolbar>
@@ -23,18 +23,27 @@
         android:layout_marginRight="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+
+
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
 
             <EditText
-                android:hint="请输入注册邮箱"
-                android:id="@+id/cae_register_email"
-                android:inputType="textEmailAddress"
+                android:id="@+id/et_id_num"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_id_num"
+                android:inputType="number" />
         </android.support.design.widget.TextInputLayout>
+
+
+
+
+
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
