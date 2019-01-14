@@ -19,7 +19,9 @@
         <activity android:name=".UserloginActivity" />
         <activity android:name=".AdminloginActivity" />
         <activity android:name=".CourierloginActivity" />
-        <activity android:name=".AdminloginActivity2"></activity>
+        <activity android:name=".AdminloginActivity2" />
+        <activity android:name=".UserRegisterActivity" />
+        <activity android:name=".CourierRegisterActivity"></activity>
     </application>
 
 </manifest>
