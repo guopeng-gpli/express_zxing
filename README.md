@@ -1,1 +1,24 @@
-20190114
+20190115 00:41一些依赖关系
+activity有对应的xml这是显而易见的
+
+
+三个item布局
+1.list_item_express
+显示的是当前用户的寄件信息
+最终需要渲染到UserloginActivity上
+
+UserloginActivity对应的activity_userlogin.xml包含了content_express,这里面是RecyclerView
+activty在setcontentview的时候，还是使用正常的就ok，不用管别的
+
+2.list_item_express_all
+显示的是系统中所有寄件信息
+最终需要渲染到AdminloginActivity上
+
+AdminloginActivity对应的activity_adminlogin.xml包含了all_content_express，这里面是RecyclerView
+
+
+3.list_item_courier_info
+显示的是所有快递员信息
+最终需要渲染到AdminloginActivity2上
+
+AdminloginActivity2对应的activity_adminlogin2.xml包含了all_choose_courier，这里面是RecyclerView

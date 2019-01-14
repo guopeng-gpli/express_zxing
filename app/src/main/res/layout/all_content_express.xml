@@ -2,21 +2,21 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_userlogin"
+    android:id="@+id/activity_adminlogin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clipToPadding="false"
     android:clipChildren="false"
-    tools:showIn="@layout/activity_userlogin"
+    tools:showIn="@layout/activity_adminlogin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.liguopeng.UserloginActivity">
+    tools:context="com.example.liguopeng.AdminloginActivity">
 
     <android.support.v7.widget.RecyclerView
         android:paddingBottom="6dp"
         android:paddingLeft="6dp"
         android:paddingRight="6dp"
         android:paddingTop="6dp"
-        android:id="@+id/list_user_item"
+        android:id="@+id/list_all_item"
         android:clipToPadding="false"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:id="@+id/LL1"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary"
-        app:title="CodeAndExpressBy李国鹏"
+        app:title="快递员扫码"
         app:titleTextColor="#ffffff">
 
     </android.support.v7.widget.Toolbar>
@@ -20,27 +20,20 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.8"
+        android:layout_weight="1"
         android:orientation="horizontal"
         android:id="@+id/top">
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+        </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1">
 
-            <ImageView
-                android:id="@+id/cae_icon"
-                android:layout_width="166dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="20dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"
-                android:src="@mipmap/cae_icon" />
+
         </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
@@ -53,7 +46,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="0.5"
         android:orientation="horizontal"
         android:id="@+id/center">
         <LinearLayout
@@ -66,36 +59,18 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical">
+
             <Button
                 android:layout_weight="1"
-                android:id="@+id/btn_adimin_login"
+                android:id="@+id/btn_courier_scan"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/admin_login"
+                android:text="@string/courier_scan"
                 android:textStyle="bold"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"/>
-            <Button
-                android:layout_weight="1"
-                android:id="@+id/btn_user_login"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/user_login"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"/>
-            <Button
-                android:layout_weight="1"
-                android:id="@+id/btn_courier_login"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/courier_login"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"/>
+
 
 
 
@@ -113,7 +88,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.5"
+        android:layout_weight="1"
         android:orientation="horizontal">
         <LinearLayout
             android:layout_width="0dp"
@@ -125,15 +100,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 >
-                <TextView
-                    android:clickable="true"
-                    android:id="@+id/cae_courier_register"
-                    android:textSize="15dp"
-                    android:textColor="#0088ff"
-                    android:layout_gravity="end"
-                    android:text="没有快递员账号？去注册"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+
 
             </LinearLayout>
             <LinearLayout
@@ -153,15 +120,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 >
-                <TextView
-                    android:clickable="true"
-                    android:id="@+id/cae_user_register"
-                    android:textSize="15dp"
-                    android:textColor="#0088ff"
-                    android:layout_gravity="end"
-                    android:text="没有用户账号？去注册"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+
 
             </LinearLayout>
             <LinearLayout
