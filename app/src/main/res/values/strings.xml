@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">基于二维码的快递信息保护系统</string>
+    <string name="user_login">用户登录</string>
+    <string name="admin_login">管理员登录</string>
+    <string name="courier_login">快递员登录</string>
+
+
+
+    <string name="hint_user_name">请输入用户名</string>
+    <string name="hint_address">请输入收货地址</string>
+    <string name="hint_phone_num">青输入手机号</string>
+    <string name="hint_id_num">请输入身份证号</string>
+    <string name="hint_search_user_info">请输入关键字</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">邮箱</string>
+    <string name="prompt_password">密码</string>
+    <string name="action_sign_in">登陆</string>
+    <string name="action_sign_in_short">登陆</string>
+    <string name="error_invalid_email">无效的邮箱</string>
+    <string name="error_invalid_password">密码太短</string>
+    <string name="error_incorrect_password">密码无效</string>
+    <string name="error_field_required">此处不可为空</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+</resources>
