@@ -34,7 +34,7 @@ public class ResultActivity extends Activity {
     private String baseURL="http://192.168.11.103/dashboard/sql/query_flag.php";
     private String CHandID;
     private String id;
-    private String self_tel="15874929064";
+    private String self_tel;
     private String en;
     private MyHandler handler;
 	@Override
@@ -50,7 +50,8 @@ public class ResultActivity extends Activity {
 		if (null != extras) {
 			int width = extras.getInt("width");
 			int height = extras.getInt("height");
-
+            self_tel=extras.getString("selftel");
+            Log.d("获得res",self_tel);
 			LayoutParams lps = new LayoutParams(width, height);
 			lps.topMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 30, getResources().getDisplayMetrics());
 			lps.leftMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 20, getResources().getDisplayMetrics());

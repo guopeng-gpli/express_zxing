@@ -34,7 +34,7 @@
                 android:layout_weight="2.5"
                 android:text="快递单号"
                 android:textColor="#000000"
-                android:textSize="25sp"/>
+                android:textSize="20sp"/>
 
             <TextView
                 android:id="@+id/cae_all_express_num"
@@ -69,7 +69,7 @@
                 android:layout_weight="1"
                 android:text="派往"
                 android:textColor="#000000"
-                android:textSize="20sp"/>
+                android:textSize="15sp"/>
 
             <TextView
                 android:id="@+id/cae_all_region"
@@ -79,10 +79,10 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="20dp"
-                android:layout_weight="1"
+                android:layout_weight="1.5"
                 android:text="岳麓区"
                 android:textColor="#000000"
-                android:textSize="20sp"/>
+                android:textSize="15sp"/>
 
             <TextView
                 android:id="@+id/cae_all_flag"
@@ -92,10 +92,10 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="20dp"
-                android:layout_weight="1"
+                android:layout_weight="4"
                 android:text="未分配"
                 android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textSize="15sp" />
 
         </LinearLayout>
 

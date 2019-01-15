@@ -14,11 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/cae_qr_code"
-            android:src="@drawable/ic_add_black_24dp"
-            android:layout_width="92dp"
-            android:layout_height="92dp" />
 
         <LinearLayout
             android:layout_weight="1"

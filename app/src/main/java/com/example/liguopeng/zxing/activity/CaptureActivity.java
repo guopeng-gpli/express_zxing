@@ -66,7 +66,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 	private CaptureActivityHandler handler;
 	private InactivityTimer inactivityTimer;
 	private BeepManager beepManager;
-
+	private String selftel;
 	private SurfaceView scanPreview = null;
 	private RelativeLayout scanContainer;
 	private RelativeLayout scanCropView;
@@ -91,7 +91,8 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 		Window window = getWindow();
 		window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		setContentView(R.layout.activity_capture);
-
+		selftel=getIntent().getStringExtra("CourierloginActivity");
+		Log.d("获得cp",selftel);
 		scanPreview = (SurfaceView) findViewById(R.id.capture_preview);
 		scanContainer = (RelativeLayout) findViewById(R.id.capture_container);
 		scanCropView = (RelativeLayout) findViewById(R.id.capture_crop_view);
@@ -197,6 +198,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 		bundle.putInt("height", mCropRect.height());
 		bundle.putString("result", rawResult.getText());
 
+		bundle.putString("selftel",selftel);
 		startActivity(new Intent(CaptureActivity.this, ResultActivity.class).putExtras(bundle));
 	}
 

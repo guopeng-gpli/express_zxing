@@ -174,6 +174,7 @@ public class MainActivity extends AppCompatActivity {
             if(login_res.equals("1")){
                 if(type.equals("user")){
                     Intent i=new Intent(MainActivity.this,UserloginActivity.class);
+                    i.putExtra(TAG,tel);
                     startActivity(i);
                 }else if (type.equals("admin")){
                     //admin
@@ -181,7 +182,9 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(i);
                 }else if (type.equals("courier")) {
                     //courier
+
                     Intent i = new Intent(MainActivity.this, CourierloginActivity.class);
+                    i.putExtra(TAG,tel);
                     startActivity(i);
                 }
                 Toast.makeText(MainActivity.this,"登录成功",Toast.LENGTH_SHORT).show();
