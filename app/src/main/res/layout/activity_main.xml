@@ -54,18 +54,52 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:id="@+id/center">
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.3">
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_weight="1.5"
+            android:orientation="vertical">
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/phone_for_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="手机号码"
+                    android:inputType="phone"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/pwd_for_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/prompt_password"
+                    android:imeActionLabel="@string/action_sign_in_short"
+                    android:imeOptions="actionUnspecified"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+
         </LinearLayout>
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
             android:layout_weight="1"
-            android:orientation="vertical">
+            android:orientation="horizontal">
             <Button
                 android:layout_weight="1"
                 android:id="@+id/btn_adimin_login"
@@ -75,7 +109,7 @@
                 android:text="@string/admin_login"
                 android:textStyle="bold"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"/>
+                />
             <Button
                 android:layout_weight="1"
                 android:id="@+id/btn_user_login"
@@ -85,7 +119,7 @@
                 android:text="@string/user_login"
                 android:textStyle="bold"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"/>
+               />
             <Button
                 android:layout_weight="1"
                 android:id="@+id/btn_courier_login"
@@ -95,25 +129,21 @@
                 android:text="@string/courier_login"
                 android:textStyle="bold"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"/>
+         />
 
 
 
 
 
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.3">
-        </LinearLayout>
+
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.5"
+        android:layout_weight="0.25"
         android:orientation="horizontal">
         <LinearLayout
             android:layout_width="0dp"
@@ -136,11 +166,7 @@
                     android:layout_height="match_parent" />
 
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                ></LinearLayout>
+
 
         </LinearLayout>
         <LinearLayout
@@ -164,11 +190,7 @@
                     android:layout_height="match_parent" />
 
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                ></LinearLayout>
+
 
         </LinearLayout>
 

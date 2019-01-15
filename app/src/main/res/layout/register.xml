@@ -28,14 +28,26 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:hint="请输入注册邮箱"
-                android:id="@+id/cae_register_email"
-                android:inputType="textEmailAddress"
+                android:hint="请输入注册手机号码"
+                android:id="@+id/cae_register_tel"
+                android:inputType="phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
         </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
 
+            <EditText
+                android:id="@+id/cae_register_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/c_name_input" />
+
+        </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
