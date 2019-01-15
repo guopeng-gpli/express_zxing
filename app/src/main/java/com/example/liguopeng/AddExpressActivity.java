@@ -1,11 +1,8 @@
 package com.example.liguopeng;
 
-import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.os.RemoteException;
-import android.support.annotation.VisibleForTesting;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -13,10 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import org.json.JSONException;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -24,60 +18,54 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
 
-public class UserRegisterActivity extends AppCompatActivity {
-
-    private EditText reg_telText;
-    private EditText reg_nameText;
-    private EditText reg_pwdText;
-    private EditText reg_ped2Text;
-    private Button btn_register;
-    String tel,name,password,password2;
-    MyHandler handler;
-    final  String baseURL="http://192.168.11.103/dashboard/sql/insert_userinfo.php";
+public class AddExpressActivity extends AppCompatActivity {
+    private EditText exp_num;
+    private EditText exp_send_tel;
+    private EditText exp_send_name;
+    private EditText exp_rec_tel;
+    private EditText exp_rec_name;
+    private EditText exp_add;
+    private Button btn_add;
+    private String num,send_tel,send_name,rec_tel,rec_name,address;
+    private MyHandler handler;
+    final  String baseURL="http://192.168.11.103/dashboard/sql/insert_expressinfo.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.register);
+        setContentView(R.layout.add_express_information);
         initview();
-
-        handler=new MyHandler();//别忘了要先实例化这里，要不然就是空指针
+        handler=new MyHandler();
     }
 
-    private  void initview(){
-        reg_telText=(EditText)findViewById(R.id.cae_register_tel);
-        reg_nameText=(EditText)findViewById(R.id.cae_register_name);
-        reg_pwdText=(EditText)findViewById(R.id.cae_register_password);
-        reg_ped2Text=(EditText)findViewById(R.id.cae_register_password2);
-        btn_register=(Button)findViewById(R.id.btn_register);
-        btn_register.setOnClickListener(new View.OnClickListener() {
+    private void initview(){
+         exp_num=(EditText)findViewById(R.id.cae_edit_express_num);
+        exp_send_tel=(EditText)findViewById(R.id.cae_edit_sender_tel);
+        exp_send_name=(EditText)findViewById(R.id.cae_edit_sender_name);
+        exp_rec_tel=(EditText)findViewById(R.id.cae_edit_rec_tel);
+       exp_rec_name=(EditText)findViewById(R.id.cae_edit_rec_name);
+         exp_add=(EditText)findViewById(R.id.cae_edit_rec_add);
+       btn_add=(Button)findViewById(R.id.btn_add_express_sure);
+        btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tel = reg_telText.getText().toString();
-               password = reg_pwdText.getText().toString();
-                name=reg_nameText.getText().toString();
-           password2 = reg_ped2Text.getText().toString();
-                if (TextUtils.isEmpty(password) || ! TextUtils.equals(password, password2)) {
-                    reg_ped2Text.setError("输入的密码不一致");
-                    return;
-                }
-                register(tel,name,password);
-
+                num=exp_num.getText().toString();
+                send_tel=exp_send_tel.getText().toString();
+                send_name=exp_send_name.getText().toString();
+                rec_tel=exp_rec_tel.getText().toString();
+                rec_name=exp_rec_name.getText().toString();
+                address=exp_add.getText().toString();
+             //   add(num,send_tel,send_name,rec_tel,rec_name,address);
+                new GetThread().start();//用get方法发送
             }
         });
     }
 
-
-    private void register(final String tel, final String name,final String password) {
-        new GetThread().start();//用get方法发送
-    }
-
-
     class GetThread extends Thread {
         public void run() {
             HttpURLConnection conn = null;//声明连接对象
-            String urlStr = baseURL+ "?tel="+tel+ "&name="+name+"&pwd=" + password2;
+            String urlStr = baseURL+"?id="+num+"&send_tel="+send_tel+"&send_name="+send_name+"&rec_tel="+rec_tel+"&rec_name="+rec_name+"&address="+address+"&flag=0";
+            Log.d("addcourier",urlStr);
             InputStream is = null;
             String resultData = "";
             try {
@@ -93,16 +81,17 @@ public class UserRegisterActivity extends AppCompatActivity {
                     while ((inputLine = bufferReader.readLine()) != null) {
                         resultData += inputLine ;
                     }
-                    System.out.print("get方法取回内容：" + resultData);
+               //     System.out.print("get方法取回内容：" + resultData);
+                    Log.d("get方法取回内容：",resultData);
                     if(resultData.equals("insert_successful")){
                         //Toast.makeText(UserRegisterActivity.this,"注册成功",Toast.LENGTH_SHORT).show();
-                        Log.d("register","相等");
+                        Log.d("r","相等");
                         Looper.prepare();
-                        showRes("注册成功");
+                        showRes("添加成功");
                     }
                     else{
                         Looper.prepare();
-                        showRes("注册失败, 用户名可能已经存在");
+                        showRes("添加失败");
                     }
 
                 }
@@ -130,12 +119,9 @@ public class UserRegisterActivity extends AppCompatActivity {
         //接收别的线程的信息并处理
         public void handleMessage(Message msg) {
             Bundle bundle=msg.getData();
-            Toast.makeText(UserRegisterActivity.this,bundle.get("res").toString(),Toast.LENGTH_SHORT).show();
+            Toast.makeText(AddExpressActivity.this,bundle.get("res").toString(),Toast.LENGTH_SHORT).show();
             Log.d("register","toast");
             Looper.loop();
         }
     }
-
-
-
 }

@@ -25,7 +25,19 @@
         android:layout_height="wrap_content">
 
 
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
 
+            <EditText
+                android:id="@+id/cae_c_res_tel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/c_tel_input"
+                android:inputType="phone" />
+        </android.support.design.widget.TextInputLayout>
 
 
         <android.support.design.widget.TextInputLayout
@@ -54,19 +66,7 @@
                 android:hint="@string/c_reg_input" />
 
         </android.support.design.widget.TextInputLayout>
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true">
 
-            <EditText
-                android:id="@+id/cae_c_res_tel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/c_tel_input"
-                android:inputType="phone" />
-        </android.support.design.widget.TextInputLayout>
 
 
 
