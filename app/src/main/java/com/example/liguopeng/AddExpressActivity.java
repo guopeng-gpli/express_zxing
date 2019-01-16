@@ -3,9 +3,12 @@ package com.example.liguopeng;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -28,20 +31,79 @@ public class AddExpressActivity extends AppCompatActivity {
     private EditText exp_add;
     private Button btn_add;
     private String num,send_tel,send_name,rec_tel,rec_name,address;
+    private String self_tel;
     private MyHandler handler;
-    final  String baseURL="http://192.168.11.103/dashboard/sql/insert_expressinfo.php";
+    final  String baseURL="http://192.168.43.251/dashboard/sql/insert_expressinfo.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_express_information);
+        self_tel=getIntent().getStringExtra("UserloginActivity");
         initview();
         handler=new MyHandler();
     }
 
     private void initview(){
+        final TextInputLayout inputLayout1= (TextInputLayout) findViewById(R.id.express_id);
+        //  inputLayout.setHint("请输入姓名");
+
+        EditText text=inputLayout1.getEditText();
+        inputLayout1.setErrorEnabled(true);
+        text.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.length()!=8){
+                    inputLayout1.setError("快递单号应为8位");
+                }else{
+                    inputLayout1.setError(null);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        final TextInputLayout inputLayout= (TextInputLayout) findViewById(R.id.input_rec_phone);
+        //  inputLayout.setHint("请输入姓名");
+
+        EditText text1=inputLayout.getEditText();
+        inputLayout.setErrorEnabled(true);
+        text1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.length()!=11){
+                    inputLayout.setError("手机号码应为11位");
+                }else{
+                    inputLayout.setError(null);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
+
+
+
          exp_num=(EditText)findViewById(R.id.cae_edit_express_num);
-        exp_send_tel=(EditText)findViewById(R.id.cae_edit_sender_tel);
-        exp_send_name=(EditText)findViewById(R.id.cae_edit_sender_name);
+       // exp_send_tel=(EditText)findViewById(R.id.cae_edit_sender_tel);
+      //  exp_send_tel.setText(self_tel);
+       // exp_send_name=(EditText)findViewById(R.id.cae_edit_sender_name);
         exp_rec_tel=(EditText)findViewById(R.id.cae_edit_rec_tel);
        exp_rec_name=(EditText)findViewById(R.id.cae_edit_rec_name);
          exp_add=(EditText)findViewById(R.id.cae_edit_rec_add);
@@ -50,8 +112,8 @@ public class AddExpressActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 num=exp_num.getText().toString();
-                send_tel=exp_send_tel.getText().toString();
-                send_name=exp_send_name.getText().toString();
+//                send_tel=exp_send_tel.getText().toString();
+          //      send_name=exp_send_name.getText().toString();
                 rec_tel=exp_rec_tel.getText().toString();
                 rec_name=exp_rec_name.getText().toString();
                 address=exp_add.getText().toString();
@@ -64,7 +126,7 @@ public class AddExpressActivity extends AppCompatActivity {
     class GetThread extends Thread {
         public void run() {
             HttpURLConnection conn = null;//声明连接对象
-            String urlStr = baseURL+"?id="+num+"&send_tel="+send_tel+"&send_name="+send_name+"&rec_tel="+rec_tel+"&rec_name="+rec_name+"&address="+address+"&flag=0";
+            String urlStr = baseURL+"?id="+num+"&send_tel="+self_tel+"&rec_tel="+rec_tel+"&rec_name="+rec_name+"&address="+address+"&flag=未分配";
             Log.d("addcourier",urlStr);
             InputStream is = null;
             String resultData = "";

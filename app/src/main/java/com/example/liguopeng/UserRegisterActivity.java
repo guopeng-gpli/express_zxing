@@ -35,7 +35,7 @@ public class UserRegisterActivity extends AppCompatActivity {
     private Button btn_register;
     String tel,name,password,password2;
     MyHandler handler;
-    final  String baseURL="http://192.168.11.103/dashboard/sql/insert_userinfo.php";
+    final  String baseURL="http://192.168.43.251/dashboard/sql/insert_userinfo.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,7 +93,7 @@ public class UserRegisterActivity extends AppCompatActivity {
                     while ((inputLine = bufferReader.readLine()) != null) {
                         resultData += inputLine ;
                     }
-                    System.out.print("get方法取回内容：" + resultData);
+                    //System.out.print("get方法取回内容：" + resultData);
                     if(resultData.equals("insert_successful")){
                         //Toast.makeText(UserRegisterActivity.this,"注册成功",Toast.LENGTH_SHORT).show();
                         Log.d("register","相等");

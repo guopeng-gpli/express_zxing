@@ -36,7 +36,7 @@ import java.util.List;
 public class AdminloginActivity2 extends AppCompatActivity {
     private String express_id;
     private RecyclerView mItemRecyclerView;
-    final String baseURL="http://192.168.11.103/dashboard/sql/obtainallcourier.php";
+    final String baseURL="http://192.168.43.251/dashboard/sql/obtainallcourier.php";
     private MyHandler handler;
     private MyHandler2 handler2;
     private ItemAdapter mAdapter;
@@ -151,9 +151,9 @@ public class AdminloginActivity2 extends AppCompatActivity {
 
         public void bindItem(Courier courier){
             mCourier=courier;
-            mCourier_tel.setText(mCourier.getTel());
+            mCourier_tel.setText("联系电话："+mCourier.getTel());
             mCourier_name.setText(mCourier.getName());
-            mCourier_region.setText(mCourier.getRegion());
+            mCourier_region.setText("派件区域："+mCourier.getRegion());
 
         }
         @Override
@@ -228,7 +228,7 @@ public class AdminloginActivity2 extends AppCompatActivity {
     class GetThread2 extends Thread {
         public void run() {
             HttpURLConnection conn = null;//声明连接对象
-            String urlStr = "http://192.168.11.103/dashboard/sql/besure.php"+"?couriertel="+couriertel+"&expressid="+express_id;
+            String urlStr = "http://192.168.43.251/dashboard/sql/besure.php"+"?couriertel="+couriertel+"&expressid="+express_id;
             Log.d(TAG,urlStr);
             InputStream is = null;
             String resultData = "";

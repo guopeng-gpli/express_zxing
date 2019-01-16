@@ -1,6 +1,7 @@
 package com.example.liguopeng.zxing.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
@@ -31,7 +33,7 @@ public class ResultActivity extends Activity {
 	private String TAG="ResultActivity";
 	private ImageView mResultImage;
 	private TextView mResultText;
-    private String baseURL="http://192.168.11.103/dashboard/sql/query_flag.php";
+    private String baseURL="http://192.168.43.251/dashboard/sql/query_flag.php";
     private String CHandID;
     private String id;
     private String self_tel;
@@ -46,6 +48,20 @@ public class ResultActivity extends Activity {
 
 		mResultImage = (ImageView) findViewById(R.id.result_image);
 		mResultText = (TextView) findViewById(R.id.result_text);
+
+		mResultText.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent sendIntent =new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT,mResultText.getText());
+                sendIntent.setType("text/plain");
+                startActivity(Intent.createChooser(sendIntent,"您可以选择将快递信息发送给如下应用"));
+            }
+        });
+
+
         handler=new MyHandler();//别忘了要先实例化这里，要不然就是空指针
 		if (null != extras) {
 			int width = extras.getInt("width");

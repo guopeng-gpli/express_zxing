@@ -1,6 +1,8 @@
 package com.example.liguopeng;
 
+import android.app.AlertDialog;
 import android.content.ClipData;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.wifi.p2p.WifiP2pManager;
 import android.os.Handler;
@@ -41,7 +43,7 @@ import java.util.concurrent.TimeoutException;
 
 public class AdminloginActivity extends AppCompatActivity {
     private RecyclerView mItemRecyclerView;
-    final String baseURL="http://192.168.11.103/dashboard/sql/obtainforadmin.php";
+    final String baseURL="http://192.168.43.251/dashboard/sql/obtainforadmin.php";
 
     private final String TAG="AdminloginActivity";
     private MyHandler handler;
@@ -104,7 +106,7 @@ public class AdminloginActivity extends AppCompatActivity {
             Bundle bundle = msg.getData();
             String obtain_res = bundle.get("res").toString();
          //   login_res应该是数组
-            Toast.makeText(AdminloginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+         //   Toast.makeText(AdminloginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
 
          //   String strByJson = JsonToStringUtil.getStringByJson(this, obtain_res);
 
@@ -148,7 +150,13 @@ public class AdminloginActivity extends AppCompatActivity {
         mAdapter=new ItemAdpter(mItems);
         mItemRecyclerView.setAdapter(mAdapter);
     }
-
+    /*
+     * 列表部分
+     * RecyclerView的任务仅限于回收和定位屏幕上的TextView
+     * TextView能够显示数据离不开Adapter子类和ViewHolder子类
+     * ViewHolder子类作用：容纳View视图
+     * RecyclerView自身不会创建视图，它创建的是ViewHolder，ViewHolder引用这一个个itemView
+     * */
     private class ItemHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private TextView mExpress_id;
         private TextView mExpress_region;
@@ -166,18 +174,36 @@ public class AdminloginActivity extends AppCompatActivity {
             mExpress=express;
             mExpress_id.setText(mExpress.getId());
             mExpress_region.setText(mExpress.getAddress());
+
+
             mFlag.setText(mExpress.getFlag());
+
 
         }
         @Override
         public void onClick(View v) {
-            Toast.makeText(AdminloginActivity.this,mExpress.getId(),Toast.LENGTH_SHORT).show();
-            Intent i=new Intent(AdminloginActivity.this,AdminloginActivity2.class);
-            i.putExtra(TAG,mExpress.getId());
-            startActivity(i);
+
+            //这里不想对已经分配的进行分配，当点击已经分配的，不让再分配，，，，到快递员页面，要显示当前是在对谁进行分配，提示
+            if(mExpress.getFlag().equals("未分配")) {
+                //  Toast.makeText(AdminloginActivity.this,mExpress.getId(),Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(AdminloginActivity.this, AdminloginActivity2.class);
+                i.putExtra(TAG, mExpress.getId());
+                startActivity(i);
+            }else{
+                besure(mExpress.getId());
+            }
         }
 
     }
+    /*
+     * RecyclerView自身不会创建视图，它创建的是ViewHolder：这个实际任务是Adapter来完成的。
+     * adapter是个控制器对象，从模型层获取数据，然后提供给RecyclerView显示
+     * adapter负责：创建必要的ViewHolder、绑定ViewHolder至模型层数据
+     * RecyclerView需要显示视图对象时，就会去找它的adapter
+     * 首先调用adapter的getItemCount()方法，RecyclerView询问数组列表有多少个对象
+     *2.RecyclerView调用adapter的createViewHolder方法创建ViewHolder以及ViewHolder要显示的视图。
+     *3.RecyclerView会传入ViewHolder及其位置，调用onBindViewHolder方法。adapter会找到目标位置的数据并绑定到ViewHolder的视图上。绑定：使用模型数据填充视图。
+     */
 
     private class ItemAdpter extends RecyclerView.Adapter<ItemHolder>{
         private List<Express> mExpresses;
@@ -206,4 +232,45 @@ public class AdminloginActivity extends AppCompatActivity {
 
     }
 
+
+    private void besure(final  String express_id ){
+
+        /* @setIcon 设置对话框图标
+         * @setTitle 设置对话框标题
+         * @setMessage 设置对话框消息提示
+         * setXXX方法返回Dialog对象，因此可以链式设置属性
+         */
+        final AlertDialog.Builder normalDialog =
+                new AlertDialog.Builder(AdminloginActivity.this);
+        normalDialog.setIcon(R.mipmap.cae_icon);
+        normalDialog.setTitle("确认修改分配");
+        normalDialog.setMessage("您确定要将更改"+express_id+"的分配情况嘛？");
+        normalDialog.setPositiveButton("确定",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent i = new Intent(AdminloginActivity.this, AdminloginActivity2.class);
+                        i.putExtra(TAG,express_id);
+                        startActivity(i);
+                    }
+                });
+        normalDialog.setNegativeButton("取消",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //...To-do
+                    }
+                });
+        // 显示
+        normalDialog.show();
+
+
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        new GetThread().start();//用get方法发送
+    }
 }

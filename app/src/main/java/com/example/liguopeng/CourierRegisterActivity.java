@@ -29,7 +29,7 @@ public class CourierRegisterActivity extends AppCompatActivity {
     private Button btn_register;
     private String tel,name,region,password,password2;
     private MyHandler handler;
-    final  String baseURL="http://192.168.11.103/dashboard/sql/insert_courierinfo.php";
+    final  String baseURL="http://192.168.43.251/dashboard/sql/insert_courierinfo.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,7 +98,7 @@ public class CourierRegisterActivity extends AppCompatActivity {
                     }
                     else{
                         Looper.prepare();
-                        showRes("注册失败, 用户名可能已经存在");
+                        showRes("注册失败, 快递员账号可能已经存在");
                     }
 
                 }
@@ -116,6 +116,8 @@ public class CourierRegisterActivity extends AppCompatActivity {
         msg.setData(bundle);
         handler.sendMessage(msg);//用handler向主线程发送信息
     }
+
+
     class MyHandler extends Handler {
         @Override
         //接收别的线程的信息并处理

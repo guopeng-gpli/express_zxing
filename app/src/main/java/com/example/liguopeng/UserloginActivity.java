@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,7 +40,8 @@ public class UserloginActivity extends AppCompatActivity {
     private MyHandler handler;
     private ItemAdapter mAdapter;
     private List<Express> mItems;
-    final String baseURL="http://192.168.11.103/dashboard/sql/obtainforuser.php";
+    final String baseURL="http://192.168.43.251/dashboard/sql/obtainforuser.php";
+    private  Toolbar mytoolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,12 +52,17 @@ public class UserloginActivity extends AppCompatActivity {
 
         mItemRecyclerView=(RecyclerView)findViewById(R.id.list_user_item);
         mItemRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mytoolbar=(Toolbar)findViewById(R.id.toolbar);
+        mytoolbar.setTitle("用户"+self_tel+"的寄件信息");
         btn_add=(Button)findViewById(R.id.btn_add_express);
         btn_add.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
+
+
                 Intent i=new Intent(UserloginActivity.this,AddExpressActivity.class);
+                i.putExtra(TAG,self_tel);
                 startActivity(i);
             }
         });
@@ -200,4 +207,9 @@ public class UserloginActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        new GetThread().start();//用get方法发送
+    }
 }

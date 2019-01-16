@@ -5,11 +5,14 @@ import android.graphics.Color;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -38,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private String tel;
     private String password;
     private String type;
-    final String baseURL="http://192.168.11.103/dashboard/sql/login_judge.php";
+    final String baseURL="http://192.168.43.251/dashboard/sql/login_judge.php";
 
 
 
@@ -57,6 +60,36 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void initView() {
+
+        final TextInputLayout inputLayout= (TextInputLayout) findViewById(R.id.login_phone);
+      //  inputLayout.setHint("请输入姓名");
+
+        EditText text=inputLayout.getEditText();
+        inputLayout.setErrorEnabled(true);
+        text.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.length()!=11){
+                    inputLayout.setError("手机号码应为11位");
+                }else{
+                    inputLayout.setError(null);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
+
+
         toolbar=(Toolbar)findViewById(R.id.toolbar);
         btnAdmin=(Button)findViewById(R.id.btn_adimin_login);
         btnUser=(Button)findViewById(R.id.btn_user_login);
@@ -73,7 +106,10 @@ public class MainActivity extends AppCompatActivity {
                 type="admin";
                 tel=mPhone.getText().toString();
                 password=mPwd.getText().toString();
-                new GetThread().start();//用get方法发送
+                if(judge_phone(tel)){
+                    new GetThread().start();//用get方法发送
+                }
+
 //                Intent i=new Intent(MainActivity.this,AdminloginActivity.class);
 //                startActivity(i);
             }
@@ -84,7 +120,9 @@ public class MainActivity extends AppCompatActivity {
                 type="user";
                 tel=mPhone.getText().toString();
                 password=mPwd.getText().toString();
-                new GetThread().start();//用get方法发送
+                if(judge_phone(tel)){
+                    new GetThread().start();//用get方法发送
+                }
 
             }
 
@@ -95,7 +133,9 @@ public class MainActivity extends AppCompatActivity {
                 type="courier";
                 tel=mPhone.getText().toString();
                 password=mPwd.getText().toString();
-                new GetThread().start();//用get方法发送
+                if(judge_phone(tel)){
+                    new GetThread().start();//用get方法发送
+                }
 
             }
 
@@ -199,5 +239,21 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+    public  boolean judge_phone(final String num){
+        boolean b=true;
+        if (num.length()!=11)
+            b=false;
 
+        return  b;
+
+
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mPhone.setText("");
+        mPwd.setText("");
+    }
 }

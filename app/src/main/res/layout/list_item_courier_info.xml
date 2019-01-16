@@ -38,7 +38,7 @@
                     android:text="快递员1"
                     android:id="@+id/courier_name"
                     android:textColor="#000000"
-                    android:textSize="25sp"/>
+                    android:textSize="20sp"/>
 
 
 
@@ -61,7 +61,7 @@
                 android:layout_weight="1"
                 android:text="岳麓区"
                 android:textColor="#000000"
-                android:textSize="25sp"/>
+                android:textSize="15sp"/>
 
                 <TextView
                     android:id="@+id/courier_tel"
@@ -74,7 +74,7 @@
                     android:layout_weight="1"
                     android:text="15874929063"
                     android:textColor="#000000"
-                    android:textSize="25sp"/>
+                    android:textSize="15sp"/>
 
             </LinearLayout>
         </LinearLayout>
