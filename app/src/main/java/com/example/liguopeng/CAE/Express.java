@@ -11,6 +11,24 @@ public class Express {
     private String rec_name;
     private String flag;
     private String address;
+    private String recd;
+    private String time;
+
+    public String getRecd() {
+        return recd;
+    }
+
+    public void setRecd(String recd) {
+        this.recd = recd;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
 
     public String getId() {
         return id;

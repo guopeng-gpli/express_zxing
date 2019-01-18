@@ -32,14 +32,16 @@
         <activity android:name=".AdminloginActivity2" />
         <activity android:name=".UserRegisterActivity" />
         <activity android:name=".CourierRegisterActivity" />
-        <activity
-            android:name=".zxing.activity.CaptureActivity"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Black.NoTitleBar" />
-        <activity
-            android:name=".zxing.activity.ResultActivity"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity android:name=".zxing.activity.ResultActivity"/>
+        <activity android:name=".zxing.activity.CaptureActivity"/>
+        <!--<activity-->
+            <!--android:name=".zxing.activity.CaptureActivity"-->
+            <!--android:screenOrientation="portrait"-->
+            <!--android:theme="@android:style/Theme.Black.NoTitleBar" />-->
+        <!--<activity-->
+            <!--android:name=".zxing.activity.ResultActivity"-->
+            <!--android:screenOrientation="portrait"-->
+            <!--android:theme="@android:style/Theme.Black.NoTitleBar" />-->
         <activity android:name=".AddExpressActivity"></activity>
     </application>
 

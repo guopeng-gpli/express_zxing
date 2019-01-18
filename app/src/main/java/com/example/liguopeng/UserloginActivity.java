@@ -156,6 +156,8 @@ public class UserloginActivity extends AppCompatActivity {
         private TextView mRec_tel;
         private TextView mAddress;
         private Express mExpress;
+        private TextView mRecd;
+        private TextView mTime;
         public ItemHolder(View itemView){
             super(itemView);
             itemView.setOnClickListener(this);
@@ -163,6 +165,8 @@ public class UserloginActivity extends AppCompatActivity {
             mRec_name=(TextView)itemView.findViewById(R.id.cae_item_name);
             mRec_tel=(TextView)itemView.findViewById(R.id.cae_item_phone);
             mAddress=(TextView)itemView.findViewById(R.id.cae_item_add);
+            mRecd=(TextView)itemView.findViewById(R.id.cae_item_recd);
+            mTime=(TextView)itemView.findViewById(R.id.cae_item_time);
         }
 
         public void bindItem(Express express){
@@ -171,6 +175,8 @@ public class UserloginActivity extends AppCompatActivity {
             mRec_name.setText("收件人："+mExpress.getRec_name());
             mRec_tel.setText(mExpress.getRec_tel());
             mAddress.setText(mExpress.getAddress());
+            mRecd.setText("派送情况："+mExpress.getRecd());
+            mTime.setText("派送时间："+mExpress.getTime());
           //  mFlag.setText(mExpress.getFlag());
 
         }
