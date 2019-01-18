@@ -1,0 +1,35 @@
+1.aes.php
+对个人信息加密时引用
+2.besure
+更新快递单对于快递员
+3.CryptAES.class.php
+加密包含进去
+4.insert_courierinfo
+密码要hash
+5.insert_expressinfo
+插入快递信息，将快递单号明文，用户信息密文生成二维码
+6.insert_userinfo
+插入用户信息，密码要hash
+7.判断登录类型，密码是否正确
+if (password_verify($pwd,$pwd_in_db)) {
+    $res_login='1';
+
+echo $res_login;
+
+} else { 
+echo $res_login;
+}
+
+8.obtainallcourier
+获取全部快递员，以json传到客户端
+9.obtainforadmin
+获取全部快递单，以json传到客户端
+10.obtainforuser
+获取当前用户寄出的所有快递，以json传到客户端
+注：所有的json都是用gson解析的
+
+11.phpqrcode
+生成二维码时引用
+
+12.query_flag.php
+根据快递员信息与快递派送信息比对，判断是否能通过二维码查看用户信息
