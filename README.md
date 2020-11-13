@@ -1,24 +1,28 @@
-20190115 00:41Ò»Ğ©ÒÀÀµ¹ØÏµ
-activityÓĞ¶ÔÓ¦µÄxmlÕâÊÇÏÔ¶øÒ×¼ûµÄ
+åŸºäºäºŒç»´ç çš„å¿«é€’ä¿¡æ¯ä¿æŠ¤ç³»ç»Ÿ
+åº”ç”¨åŸºç¡€å®è·µäºŒï¼ˆWebæŠ€æœ¯+æ•°æ®åº“+ç§»åŠ¨åº”ç”¨å¼€å‘ï¼‰
 
 
-Èı¸öitem²¼¾Ö
+20190115 00:41ä¸€äº›ä¾èµ–å…³ç³»
+activityæœ‰å¯¹åº”çš„xmlè¿™æ˜¯æ˜¾è€Œæ˜“è§çš„
+
+
+ä¸‰ä¸ªitemå¸ƒå±€
 1.list_item_express
-ÏÔÊ¾µÄÊÇµ±Ç°ÓÃ»§µÄ¼Ä¼şĞÅÏ¢
-×îÖÕĞèÒªäÖÈ¾µ½UserloginActivityÉÏ
+æ˜¾ç¤ºçš„æ˜¯å½“å‰ç”¨æˆ·çš„å¯„ä»¶ä¿¡æ¯
+æœ€ç»ˆéœ€è¦æ¸²æŸ“åˆ°UserloginActivityä¸Š
 
-UserloginActivity¶ÔÓ¦µÄactivity_userlogin.xml°üº¬ÁËcontent_express,ÕâÀïÃæÊÇRecyclerView
-activtyÔÚsetcontentviewµÄÊ±ºò£¬»¹ÊÇÊ¹ÓÃÕı³£µÄ¾Íok£¬²»ÓÃ¹Ü±ğµÄ
+UserloginActivityå¯¹åº”çš„activity_userlogin.xmlåŒ…å«äº†content_express,è¿™é‡Œé¢æ˜¯RecyclerView
+activtyåœ¨setcontentviewçš„æ—¶å€™ï¼Œè¿˜æ˜¯ä½¿ç”¨æ­£å¸¸çš„å°±okï¼Œä¸ç”¨ç®¡åˆ«çš„
 
 2.list_item_express_all
-ÏÔÊ¾µÄÊÇÏµÍ³ÖĞËùÓĞ¼Ä¼şĞÅÏ¢
-×îÖÕĞèÒªäÖÈ¾µ½AdminloginActivityÉÏ
+æ˜¾ç¤ºçš„æ˜¯ç³»ç»Ÿä¸­æ‰€æœ‰å¯„ä»¶ä¿¡æ¯
+æœ€ç»ˆéœ€è¦æ¸²æŸ“åˆ°AdminloginActivityä¸Š
 
-AdminloginActivity¶ÔÓ¦µÄactivity_adminlogin.xml°üº¬ÁËall_content_express£¬ÕâÀïÃæÊÇRecyclerView
+AdminloginActivityå¯¹åº”çš„activity_adminlogin.xmlåŒ…å«äº†all_content_expressï¼Œè¿™é‡Œé¢æ˜¯RecyclerView
 
 
 3.list_item_courier_info
-ÏÔÊ¾µÄÊÇËùÓĞ¿ìµİÔ±ĞÅÏ¢
-×îÖÕĞèÒªäÖÈ¾µ½AdminloginActivity2ÉÏ
+æ˜¾ç¤ºçš„æ˜¯æ‰€æœ‰å¿«é€’å‘˜ä¿¡æ¯
+æœ€ç»ˆéœ€è¦æ¸²æŸ“åˆ°AdminloginActivity2ä¸Š
 
-AdminloginActivity2¶ÔÓ¦µÄactivity_adminlogin2.xml°üº¬ÁËall_choose_courier£¬ÕâÀïÃæÊÇRecyclerView
+AdminloginActivity2å¯¹åº”çš„activity_adminlogin2.xmlåŒ…å«äº†all_choose_courierï¼Œè¿™é‡Œé¢æ˜¯RecyclerView
